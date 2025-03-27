@@ -13,21 +13,23 @@
             background-color: #f4f4f9;
             color: #333;
             text-align: center;
-            overflow: hidden;
-            position: relative;
+            overflow-x: hidden;
         }
         header {
             background: #2C3E50;
             padding: 15px 0;
             text-align: center;
+            width: 100%;
         }
         nav ul {
             list-style: none;
             padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
         }
         nav ul li {
-            display: inline;
-            margin: 0 15px;
+            margin: 10px;
         }
         nav ul li a {
             color: white;
@@ -43,9 +45,12 @@
             color: white;
             padding: 50px 20px;
             font-size: 20px;
+            width: 100%;
+            box-sizing: border-box;
         }
         .container {
-            max-width: 800px;
+            max-width: 90%;
+            width: 800px;
             margin: auto;
             background: white;
             padding: 20px;
@@ -75,18 +80,19 @@
             text-align: center;
             padding: 15px 0;
             margin-top: 30px;
+            width: 100%;
+            box-sizing: border-box;
         }
         footer a {
             color: #f39c12;
             text-decoration: none;
         }
-        /* Nền động */
         @keyframes backgroundAnimation {
             0% { background-position: 0 0; }
             100% { background-position: 100% 100%; }
         }
         body {
-            background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1);
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4, #ffdde1);
             background-size: 400% 400%;
             animation: backgroundAnimation 15s linear infinite;
         }
@@ -100,6 +106,7 @@
                 <li><a href="tailieu1.md">📚 Tài liệu</a></li>
                 <li><a href="huongdan.html">📝 Hướng dẫn</a></li>
                 <li><a href="chatgpt.html">🌍 VIAN AI</a></li>
+                <li><a href="thanhtoan.html">💳 Thanh toán</a></li>
                 <li><a href="lienhe.html">📞 Liên hệ</a></li>
             </ul>
         </nav>

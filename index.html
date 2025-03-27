@@ -79,24 +79,19 @@
             color: #f39c12;
             text-decoration: none;
         }
-        .petal {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: pink;
-            border-radius: 50%;
-            opacity: 0.8;
-            pointer-events: none;
-            animation: fall linear infinite;
+        .dragon {
+            position: fixed;
+            width: 100px;
+            animation: fly 10s linear infinite;
         }
-        @keyframes fall {
+        @keyframes fly {
             from {
-                transform: translateY(-10vh) translateX(0px) rotate(0deg);
+                left: -100px;
+                top: 50%;
             }
             to {
-                transform: translateY(100vh) translateX(50px) rotate(360deg);
-                animation-duration: 2s;
-            }
+                left: 100%;
+                top: 30%;
             }
         }
     </style>
@@ -134,15 +129,10 @@
     </footer>
 
     <script>
-        function createPetal() {
-            const petal = document.createElement("div");
-            petal.classList.add("petal");
-            petal.style.left = Math.random() * window.innerWidth + "px";
-            petal.style.animationDuration = (Math.random() * 3 + 2) + "s";
-            document.body.appendChild(petal);
-            setTimeout(() => { petal.remove(); }, 5000);
-        }
-        setInterval(createPetal, 50);
+        const dragon = document.createElement("img");
+        dragon.src = "https://upload.wikimedia.org/wikipedia/commons/2/2b/Dragon.png";
+        dragon.classList.add("dragon");
+        document.body.appendChild(dragon);
     </script>
 </body>
 </html>

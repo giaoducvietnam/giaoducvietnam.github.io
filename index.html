@@ -13,6 +13,7 @@
             background-color: #f4f4f9;
             color: #333;
             text-align: center;
+            overflow: hidden;
         }
         header {
             background: #2C3E50;
@@ -78,6 +79,26 @@
             color: #f39c12;
             text-decoration: none;
         }
+        .petal {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: pink;
+            border-radius: 50%;
+            opacity: 0.8;
+            pointer-events: none;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            from {
+                transform: translateY(-10vh) translateX(0px) rotate(0deg);
+            }
+            to {
+                transform: translateY(100vh) translateX(50px) rotate(360deg);
+                animation-duration: 2s;
+            }
+            }
+        }
     </style>
 </head>
 <body>
@@ -111,6 +132,17 @@
         <p>© 2025 TÀI LIỆU GIÁO DỤC VIỆT NAM. All Rights Reserved.</p>
         <p>📩 Liên hệ: <a href="mailto:email@example.com">email@example.com</a></p>
     </footer>
+
+    <script>
+        function createPetal() {
+            const petal = document.createElement("div");
+            petal.classList.add("petal");
+            petal.style.left = Math.random() * window.innerWidth + "px";
+            petal.style.animationDuration = (Math.random() * 3 + 2) + "s";
+            document.body.appendChild(petal);
+            setTimeout(() => { petal.remove(); }, 5000);
+        }
+        setInterval(createPetal, 50);
+    </script>
 </body>
 </html>
-

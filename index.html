@@ -14,6 +14,7 @@
             color: #333;
             text-align: center;
             overflow: hidden;
+            position: relative;
         }
         header {
             background: #2C3E50;
@@ -79,20 +80,15 @@
             color: #f39c12;
             text-decoration: none;
         }
-        .dragon {
-            position: fixed;
-            width: 100px;
-            animation: fly 10s linear infinite;
+        /* Nền động */
+        @keyframes backgroundAnimation {
+            0% { background-position: 0 0; }
+            100% { background-position: 100% 100%; }
         }
-        @keyframes fly {
-            from {
-                left: -100px;
-                top: 50%;
-            }
-            to {
-                left: 100%;
-                top: 30%;
-            }
+        body {
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1);
+            background-size: 400% 400%;
+            animation: backgroundAnimation 15s linear infinite;
         }
     </style>
 </head>
@@ -127,12 +123,5 @@
         <p>© 2025 TÀI LIỆU GIÁO DỤC VIỆT NAM. All Rights Reserved.</p>
         <p>📩 Liên hệ: <a href="mailto:email@example.com">email@example.com</a></p>
     </footer>
-
-    <script>
-        const dragon = document.createElement("img");
-        dragon.src = "https://upload.wikimedia.org/wikipedia/commons/2/2b/Dragon.png";
-        dragon.classList.add("dragon");
-        document.body.appendChild(dragon);
-    </script>
 </body>
 </html>

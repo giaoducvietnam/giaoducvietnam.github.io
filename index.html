@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngân Hàng Tài Liệu Ôn Thi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">GIAO DUC VIET NAM</div>
+        <nav>
+            <ul>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Tài liệu</a></li>
+                <li><a href="#">Hướng dẫn</a></li>
+                <li><a href="#">VIAN AI</a></li>
+                <li><a href="#" onclick="toggleSection('payment')">Thanh toán</a></li>
+                <li><a href="#" onclick="toggleSection('contact')">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="welcome">
+        <h1 class="highlight">Chào mừng đến với <br>Ngân Hàng Tài Liệu Ôn Thi</h1>
+    </section>
+    
+    <div class="search-bar">
+        <input type="text" placeholder="Tìm kiếm tài liệu tại đây...">
+    </div>
+    
+    <button class="category-button">☰ DANH MỤC TÀI LIỆU</button>
+    
+    <ul class="document-list">
+        <li>ĐÁNH GIÁ NĂNG LỰC 2025</li>
+        <li>TỐT NGHIỆP THPT 2025</li>
+        <li>CHUYÊN ĐỀ - BÀI TẬP SÁCH MỚI 2025</li>
+        <li>GIÁO ÁN - PPT SÁCH MỚI 2025</li>
+        <li>BỘ ĐỀ KIỂM TRA SÁCH MỚI 2025</li>
+    </ul>
+    
+    <div id="contact" class="hidden">
+        <h2>Liên hệ</h2>
+        <p>Email: <a href="mailto:giaoducvietnam29@gmail.com">giaoducvietnam29@gmail.com</a></p>
+    </div>
+    
+    <div id="payment" class="hidden">
+        <h2>Thanh toán</h2>
+        <p>Ngân hàng: MB BANK</p>
+        <p>STK: 06868686868868</p>
+        <p>Chủ tài khoản: VI VAN AN</p>
+        <p>Ghi nội dung chuyển khoản: SĐT + MÔN</p>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Giao Dục Việt Nam - All rights reserved.</p>
+    </footer>
+    
+    <script>
+        function toggleSection(id) {
+            var section = document.getElementById(id);
+            section.classList.toggle("hidden");
+        }
+    </script>
+</body>
+</html>

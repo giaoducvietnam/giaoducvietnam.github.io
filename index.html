@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngân Hàng Tài Liệu Ôn Thi</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1 class="title">Chào mừng đến với Ngân Hàng Tài Liệu Ôn Thi</h1>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#tai-lieu">Tài liệu</a></li>
+                <li><a href="#huong-dan">Hướng dẫn</a></li>
+                <li><a href="#vian-ai" id="vian-ai">VIANN AI</a></li>
+                <li><a href="#" onclick="toggleSection('thanh-toan')">Thanh toán</a></li>
+                <li><a href="#" onclick="toggleSection('lien-he')">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="tai-lieu" class="content-section">
+            <h2>Danh mục tài liệu</h2>
+            <ul>
+                <li>Đánh giá năng lực 2025</li>
+                <li>Tốt nghiệp THPT 2025</li>
+                <li>Chuyên đề - Bài tập sách mới 2025</li>
+                <li>Giáo án - PPT sách mới 2025</li>
+                <li>Bộ đề kiểm tra sách mới 2025</li>
+            </ul>
+        </section>
+        <section id="thanh-toan" class="content-section hidden">
+            <h2>Thanh toán</h2>
+            <p>Ngân hàng: MB BANK</p>
+            <p>STK: <a href="tel:068686868686868">068686868686868</a></p>
+            <p>Chủ tài khoản: VI VAN AN</p>
+            <p>Ghi nội dung chuyển khoản: SĐT + MÔN</p>
+            <p>Thời gian còn lại: <span id="countdown">10:00</span></p>
+        </section>
+        <section id="lien-he" class="content-section hidden">
+            <h2>Liên hệ</h2>
+            <p>Email: <a href="mailto:giaoeducvietnam29@gmail.com">giaoeducvietnam29@gmail.com</a></p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Ngân Hàng Tài Liệu Ôn Thi. All rights reserved.</p>
+    </footer>
+</body>
+</html>

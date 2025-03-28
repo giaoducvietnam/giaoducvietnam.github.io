@@ -24,6 +24,18 @@
             padding: 15px;
             text-align: center;
         }
+        .navbar h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+            background: linear-gradient(45deg, #FFD700, #FF4500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 1.5s infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 10px rgba(255, 215, 0, 0.8); }
+            to { text-shadow: 0 0 20px rgba(255, 69, 0, 1); }
+        }
         .menu a {
             color: white;
             padding: 10px;
@@ -42,6 +54,9 @@
             color: yellow;
             padding: 5px 0;
             font-weight: bold;
+            position: fixed;
+            bottom: 20px;
+            width: 100%;
         }
         .footer {
             background: rgba(0, 0, 0, 0.8);
@@ -99,5 +114,6 @@
     </script>
 </body>
 </html>
+
 
 

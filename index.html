@@ -10,67 +10,6 @@
             background: linear-gradient(to bottom, #ffecb3, #ffcc80);
             font-family: Arial, sans-serif;
             text-align: center;
-            overflow: hidden;
-        }
-        header {
-            padding: 20px;
-            background-color: rgba(255, 152, 0, 0.8);
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-            border-radius: 10px;
-        }
-        .sun {
-            position: absolute;
-            top: 10%;
-            left: 80%;
-            width: 80px;
-            height: 80px;
-            background: radial-gradient(circle, yellow, orange);
-            border-radius: 50%;
-            animation: rotateSun 10s linear infinite;
-        }
-        @keyframes rotateSun {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        .wave {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 100px;
-            background: url('https://i.imgur.com/QsN4gJ3.png') repeat-x;
-            animation: waveAnimation 5s infinite linear;
-        }
-        @keyframes waveAnimation {
-            0% { background-position: 0; }
-            100% { background-position: 1000px; }
-        }
-        .birds {
-            position: absolute;
-            top: 5%;
-            left: -10%;
-            width: 100px;
-            height: 50px;
-            background: url('https://i.imgur.com/CJpKefL.png') no-repeat;
-            background-size: contain;
-            animation: flyBirds 15s linear infinite;
-        }
-        @keyframes flyBirds {
-            0% { left: -10%; }
-            100% { left: 110%; }
-        }
-        .leaves {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: url('https://i.imgur.com/Qs1YQfL.png') no-repeat;
-            background-size: contain;
-            animation: fallLeaves 5s infinite linear;
-        }
-        @keyframes fallLeaves {
-            0% { transform: translateY(-100px) rotate(0deg); }
-            100% { transform: translateY(500px) rotate(360deg); }
         }
     </style>
 </head>
@@ -78,10 +17,6 @@
     <header>
         <h1>Tài liệu ôn thi môn Xã Hội</h1>
     </header>
-    <div class="sun"></div>
-    <div class="birds"></div>
-    <div class="leaves" style="top: 20%; left: 30%;"></div>
-    <div class="leaves" style="top: 10%; left: 60%;"></div>
     <main>
         <section>
             <h2>Danh sách tài liệu</h2>
@@ -93,9 +28,9 @@
             </ul>
         </section>
     </main>
-    <div class="wave"></div>
     <footer>
         <p>&copy; 2025 TÀI LIỆU GIÁO DỤC VIỆT NAM</p>
     </footer>
 </body>
 </html>
+

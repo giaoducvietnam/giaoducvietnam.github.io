@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngân Hàng Tài Liệu Ôn Thi</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1 id="title">Chào mừng đến với Ngân Hàng Tài Liệu Ôn Thi</h1>
+        <nav>
+            <ul>
+                <li><a href="#" class="menu-item" data-target="tailieu">Tài liệu</a></li>
+                <li><a href="#" class="menu-item" data-target="huongdan">Hướng dẫn</a></li>
+                <li><a href="#" class="menu-item" data-target="viannai">VIANN AI</a></li>
+                <li><a href="#" class="menu-item" data-target="thanhtoan">Thanh toán</a></li>
+                <li><a href="#" class="menu-item" data-target="lienhe">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="tailieu" class="content">
+        <h2>Danh mục tài liệu</h2>
+        <ul>
+            <li>Đánh giá năng lực 2025</li>
+            <li>Tốt nghiệp THPT 2025</li>
+            <li>Chuyên đề - Bài tập sách mới 2025</li>
+            <li>Giáo án - PPT sách mới 2025</li>
+            <li>Bộ đề kiểm tra sách mới 2025</li>
+        </ul>
+    </section>
+    
+    <section id="huongdan" class="content">
+        <h2>Hướng dẫn sử dụng</h2>
+        <p>Hướng dẫn chi tiết về cách sử dụng tài liệu.</p>
+    </section>
+    
+    <section id="viannai" class="content">
+        <h2>VIANN AI</h2>
+        <p>Nhấn vào đây để chuyển sang ChatGPT.</p>
+    </section>
+    
+    <section id="thanhtoan" class="content">
+        <h2>Thanh toán</h2>
+        <p>Ngân hàng: MB BANK</p>
+        <p>STK: 068686868686868</p>
+        <p>Chủ tài khoản: VI VAN AN</p>
+        <p>Ghi nội dung chuyển khoản: SDT + MÔN</p>
+        <p id="countdown">Thời gian còn lại: 10:00</p>
+    </section>
+    
+    <section id="lienhe" class="content">
+        <h2>Liên hệ</h2>
+        <p>Email: giaoducvietnam29@gmail.com</p>
+    </section>
+    
+    <script>
+        $(document).ready(function(){
+            $(".content").hide();
+            $(".menu-item").click(function(){
+                var target = $(this).data("target");
+                $(".content").slideUp();
+                $("#" + target).slideDown();
+            });
+            
+            function startCountdown(duration) {
+                var timer = duration, minutes, seconds;
+                setInterval(function () {
+                    minutes = parseInt(timer / 60, 10);
+                    seconds = parseInt(timer % 60, 10);
+                    minutes = minutes < 10 ? "0" + minutes : minutes;
+                    seconds = seconds < 10 ? "0" + seconds : seconds;
+                    document.getElementById("countdown").textContent = "Thời gian còn lại: " + minutes + ":" + seconds;
+                    if (--timer < 0) {
+                        timer = 0;
+                    }
+                }, 1000);
+            }
+            startCountdown(600);
+            
+            var text = "Chào mừng đến với Ngân Hàng Tài Liệu Ôn Thi";
+            var i = 0;
+            function typeEffect() {
+                if (i < text.length) {
+                    document.getElementById("title").textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeEffect, 100);
+                }
+            }
+            $("#title").text("");
+            typeEffect();
+        });
+    </script>
+</body>
+</html>

@@ -20,44 +20,58 @@
             to { opacity: 1; }
         }
         .navbar {
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.9);
             padding: 15px;
             text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
         }
         .menu a {
             color: white;
             padding: 10px;
             text-decoration: none;
-            transition: color 0.3s;
+            transition: color 0.3s, transform 0.3s;
             cursor: pointer;
+            font-weight: bold;
         }
         .menu a:hover {
             color: #FFD700;
+            transform: scale(1.1);
         }
         .container, .content-section {
             display: none;
             padding: 20px;
             text-align: center;
-            background: white;
+            background: rgba(255, 255, 255, 0.9);
             color: black;
             margin: 20px auto;
             border-radius: 10px;
             max-width: 80%;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.5s ease-in-out;
         }
         .footer {
             text-align: center;
             padding: 10px;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.9);
             position: fixed;
             width: 100%;
             bottom: 0;
             left: 0;
         }
+        h2 {
+            animation: slideIn 1s ease-in-out;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
     </style>
     <script>
         function showSection(id) {
             document.querySelectorAll('.container, .content-section').forEach(el => el.style.display = 'none');
-            document.getElementById(id).style.display = 'block';
+            let section = document.getElementById(id);
+            section.style.display = 'block';
+            section.style.transform = 'scale(1)';
         }
     </script>
 </head>
@@ -74,7 +88,28 @@
 
     <div class="container" id="danh-muc">
         <h2>Danh mục</h2>
-        <p>Tất cả tài liệu sẽ hiển thị khi bạn nhấn vào danh mục này.</p>
+        <ul>
+            <li>📚 ĐÁNH GIÁ NĂNG LỰC - TƯ DUY</li>
+            <li>🎓 TỐT NGHIỆP THPT</li>
+            <li>⭐ TUYỂN SINH VÀO LỚP 10</li>
+            <li>📂 TOÁN</li>
+            <li>📂 VẬT LÝ</li>
+            <li>📂 HÓA HỌC</li>
+            <li>📂 TIẾNG ANH</li>
+            <li>📂 NGỮ VĂN - TIẾNG VIỆT</li>
+            <li>📂 SINH HỌC</li>
+            <li>📂 KHOA HỌC TỰ NHIÊN</li>
+            <li>📂 LỊCH SỬ - ĐỊA LÝ</li>
+            <li>📂 GDCD - ĐẠO ĐỨC</li>
+            <li>📂 TIN HỌC</li>
+            <li>📂 CÔNG NGHỆ</li>
+            <li>📂 HOẠT ĐỘNG TRẢI NGHIỆM</li>
+            <li>📂 GIÁO DỤC THỂ CHẤT</li>
+            <li>📂 ÂM NHẠC</li>
+            <li>📂 MỸ THUẬT</li>
+            <li>📂 QUỐC PHÒNG VÀ AN NINH</li>
+            <li>📂 GIÁO DỤC ĐỊA PHƯƠNG</li>
+        </ul>
     </div>
     
     <div class="content-section" id="thanh-toan">

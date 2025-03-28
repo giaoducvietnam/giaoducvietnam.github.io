@@ -2,54 +2,85 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ngân Hàng Tài Liệu Ôn Thi</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+        nav {
+            background: #007bff;
+            padding: 15px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: slideDown 0.8s ease-in-out;
         }
         nav ul {
-            list-style-type: none;
+            list-style: none;
             padding: 0;
+            display: flex;
+            justify-content: center;
         }
         nav ul li {
-            display: inline;
-            margin-right: 10px;
+            margin: 0 15px;
         }
-        footer {
-            margin-top: 20px;
-            font-size: 0.9em;
-            color: #555;
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        header {
+            background: linear-gradient(to bottom, #2193b0, #6dd5ed);
+            padding: 50px 20px;
+            color: white;
+            animation: fadeIn 1s ease-in-out;
+        }
+        section {
+            background: white;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: slideUp 0.8s ease-in-out;
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Ngân Hàng Tài Liệu Ôn Thi</h1>
-        <p>Nơi cung cấp tài liệu học tập đầy đủ và chất lượng.</p>
-    </header>
     <nav>
         <ul>
-            <li><a href="#">Trang chủ</a></li>
-            <li><a href="#">Tài liệu</a></li>
-            <li><a href="#">Hướng dẫn</a></li>
-            <li><a href="#">VIAN AI</a></li>
-            <li><a href="#">Thanh toán</a></li>
-            <li><a href="#">Liên hệ</a></li>
+            <li><a href="#">🏠 Trang chủ</a></li>
+            <li><a href="#">📚 Tài liệu</a></li>
+            <li><a href="#">📝 Hướng dẫn</a></li>
+            <li><a href="https://chat.openai.com" target="_blank">🌍 VIAN AI</a></li>
+            <li><a href="#">💳 Thanh toán</a></li>
+            <li><a href="#">📞 Liên hệ</a></li>
         </ul>
     </nav>
+    <header>
+        <h1>Chào mừng đến với Ngân Hàng Tài Liệu Ôn Thi</h1>
+        <p>Nơi cung cấp tài liệu học tập đầy đủ và chất lượng.</p>
+    </header>
     <section>
-        <h2>Danh sách tài liệu</h2>
+        <h2>📚 Danh sách tài liệu</h2>
         <ul>
-            <li><a href="#">Tài liệu ôn thi môn Tự Nhiên</a></li>
-            <li><a href="#">Tài liệu hướng dẫn</a></li>
+            <li><a href="#">📖 Tài liệu ôn thi môn Tự Nhiên</a></li>
         </ul>
     </section>
-    <footer>
-        <p>&copy; 2025 TÀI LIỆU GIÁO DỤC VIỆT NAM. All Rights Reserved.</p>
-        <p>Liên hệ: <a href="mailto:giaoducvietnam29@gmail.com">giaoducvietnam29@gmail.com</a></p>
-    </footer>
 </body>
 </html>
-       

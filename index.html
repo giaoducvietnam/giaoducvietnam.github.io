@@ -12,6 +12,12 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         .navbar {
             background: rgba(0, 0, 0, 0.8);
@@ -41,16 +47,22 @@
             background: rgba(255, 255, 255, 0.2);
             padding: 10px;
             border-radius: 5px;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.3s;
+            animation: glow 1.5s infinite alternate;
         }
         .doc-category:hover {
             background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.05);
+        }
+        @keyframes glow {
+            from { box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); }
+            to { box-shadow: 0 0 20px rgba(255, 255, 255, 0.6); }
         }
         .footer {
             background: rgba(0, 0, 0, 0.8);
             text-align: center;
             padding: 10px;
-            position: absolute;
+            position: fixed;
             bottom: 0;
             width: 100%;
         }
@@ -118,5 +130,6 @@
     </script>
 </body>
 </html>
+
 
        

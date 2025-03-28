@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngân Hàng Tài Liệu Ôn Thi</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Chào mừng đến với Ngân Hàng Tài Liệu Ôn Thi</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#home">Trang chủ</a></li>
+            <li><a href="#documents">Tài liệu</a></li>
+            <li><a href="#guide">Hướng dẫn</a></li>
+            <li><a href="https://chat.openai.com" target="_blank">VIANN AI</a></li>
+            <li><a href="#payment" onclick="toggleSection('payment')">Thanh toán</a></li>
+            <li><a href="#contact" onclick="toggleSection('contact')">Liên hệ</a></li>
+        </ul>
+    </nav>
+    
+    <section id="documents">
+        <h2>Danh mục tài liệu</h2>
+        <ul>
+            <li>Đánh giá năng lực 2025</li>
+            <li>Tốt nghiệp THPT 2025</li>
+            <li>Chuyên đề - Bài tập sách mới 2025</li>
+            <li>Giáo án - PPT sách mới 2025</li>
+            <li>Bộ đề kiểm tra sách mới 2025</li>
+        </ul>
+    </section>
+    
+    <section id="payment" class="hidden">
+        <h2>Thanh toán</h2>
+        <p>Ngân hàng: MB BANK</p>
+        <p>STK: <a href="tel:068686868686868">068686868686868</a></p>
+        <p>Chủ tài khoản: VI VAN AN</p>
+        <p>Ghi nội dung chuyển khoản: SĐT + MÔN</p>
+        <p>Thời gian còn lại: <span id="countdown">10:00</span></p>
+    </section>
+    
+    <section id="contact" class="hidden">
+        <h2>Liên hệ</h2>
+        <p>Email: <a href="mailto:giaoeducvietnam29@gmail.com">giaoeducvietnam29@gmail.com</a></p>
+    </section>
+    
+    <script>
+        function toggleSection(id) {
+            const section = document.getElementById(id);
+            section.classList.toggle('hidden');
+        }
+        
+        function startCountdown() {
+            let time = 600;
+            const countdown = document.getElementById('countdown');
+            const timer = setInterval(() => {
+                let minutes = Math.floor(time / 60);
+                let seconds = time % 60;
+                countdown.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+                if (time === 0) clearInterval(timer);
+                time--;
+            }, 1000);
+        }
+        
+        window.onload = startCountdown;
+    </script>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: white;
+        }
+        header {
+            padding: 20px;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            background: #fff;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        nav a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ff9900;
+        }
+        section {
+            margin: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</body>
+</html>

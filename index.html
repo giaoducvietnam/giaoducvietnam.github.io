@@ -29,13 +29,20 @@
             padding: 10px;
             text-decoration: none;
             transition: color 0.3s;
+            cursor: pointer;
         }
         .menu a:hover {
             color: #FFD700;
         }
-        .container {
+        .container, .content-section {
+            display: none;
             padding: 20px;
             text-align: center;
+            background: white;
+            color: black;
+            margin: 20px auto;
+            border-radius: 10px;
+            max-width: 80%;
         }
         .category-list {
             display: flex;
@@ -69,26 +76,27 @@
             height: 24px;
             margin-right: 10px;
         }
-        .content-section {
-            padding: 20px;
+        .footer {
             text-align: center;
-            background: white;
-            color: black;
-            margin: 20px auto;
-            border-radius: 10px;
-            max-width: 80%;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.8);
         }
     </style>
+    <script>
+        function showSection(id) {
+            document.querySelectorAll('.container, .content-section').forEach(el => el.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
 </head>
 <body>
     <nav class="navbar">
         <h1>Ngân Hàng Tài Liệu Ôn Thi</h1>
         <div class="menu">
-            <a href="#">Trang chủ</a>
-            <a href="#danh-muc">Tài liệu</a>
-            <a href="#">Hướng dẫn</a>
-            <a href="#thanh-toan">Thanh toán</a>
-            <a href="#lien-he">Liên hệ</a>
+            <a href="#" onclick="showSection('danh-muc')">Tài liệu</a>
+            <a href="#" onclick="showSection('thanh-toan')">Thanh toán</a>
+            <a href="#" onclick="showSection('lien-he')">Liên hệ</a>
+            <a href="https://chat.openai.com" target="_blank">VIANN AI</a>
         </div>
     </nav>
 
@@ -115,18 +123,20 @@
             <div class="category-item">📂 MỸ THUẬT</div>
             <div class="category-item">📂 QUỐC PHÒNG VÀ AN NINH</div>
             <div class="category-item">📂 GIÁO DỤC ĐỊA PHƯƠNG</div>
-            <div class="category-item">📂 🤖 VIANN AI</div>
         </div>
     </div>
     
     <div class="content-section" id="thanh-toan">
         <h2>Thanh Toán</h2>
-        <p>Thông tin thanh toán sẽ được hiển thị tại đây.</p>
+        <p>NGÂN HÀNG : MB BANK<br>
+        STK: 06868686868868<br>
+        CTK: VI VAN AN<br>
+        ND: SĐT + MÔN</p>
     </div>
 
     <div class="content-section" id="lien-he">
         <h2>Liên Hệ</h2>
-        <p>Liên hệ với chúng tôi qua email hoặc số điện thoại.</p>
+        <p>Email: <a href="mailto:giaoducvietnam29@gmail.com">giaoducvietnam29@gmail.com</a></p>
     </div>
     
     <footer class="footer">

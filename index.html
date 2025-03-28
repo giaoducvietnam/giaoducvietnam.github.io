@@ -69,6 +69,15 @@
             height: 24px;
             margin-right: 10px;
         }
+        .content-section {
+            padding: 20px;
+            text-align: center;
+            background: white;
+            color: black;
+            margin: 20px auto;
+            border-radius: 10px;
+            max-width: 80%;
+        }
     </style>
 </head>
 <body>
@@ -76,14 +85,14 @@
         <h1>Ngân Hàng Tài Liệu Ôn Thi</h1>
         <div class="menu">
             <a href="#">Trang chủ</a>
-            <a href="#">Tài liệu</a>
+            <a href="#danh-muc">Tài liệu</a>
             <a href="#">Hướng dẫn</a>
-            <a href="#">Thanh toán</a>
-            <a href="#">Liên hệ</a>
+            <a href="#thanh-toan">Thanh toán</a>
+            <a href="#lien-he">Liên hệ</a>
         </div>
     </nav>
 
-    <div class="container">
+    <div class="container" id="danh-muc">
         <h2>Danh mục</h2>
         <div class="category-list">
             <div class="category-item">📂 🏫 ĐÁNH GIÁ NĂNG LỰC - TƯ DUY</div>
@@ -106,7 +115,18 @@
             <div class="category-item">📂 MỸ THUẬT</div>
             <div class="category-item">📂 QUỐC PHÒNG VÀ AN NINH</div>
             <div class="category-item">📂 GIÁO DỤC ĐỊA PHƯƠNG</div>
+            <div class="category-item">📂 🤖 VIANN AI</div>
         </div>
+    </div>
+    
+    <div class="content-section" id="thanh-toan">
+        <h2>Thanh Toán</h2>
+        <p>Thông tin thanh toán sẽ được hiển thị tại đây.</p>
+    </div>
+
+    <div class="content-section" id="lien-he">
+        <h2>Liên Hệ</h2>
+        <p>Liên hệ với chúng tôi qua email hoặc số điện thoại.</p>
     </div>
     
     <footer class="footer">
@@ -114,6 +134,7 @@
     </footer>
 </body>
 </html>
+
 
 
 

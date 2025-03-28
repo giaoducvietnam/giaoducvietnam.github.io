@@ -37,26 +37,11 @@
             padding: 20px;
             text-align: center;
         }
-        .document-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            padding: 20px;
-        }
-        .doc-category {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 10px;
-            border-radius: 5px;
-            transition: background 0.3s, transform 0.3s;
-            animation: glow 1.5s infinite alternate;
-        }
-        .doc-category:hover {
-            background: rgba(255, 255, 255, 0.4);
-            transform: scale(1.05);
-        }
-        @keyframes glow {
-            from { box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); }
-            to { box-shadow: 0 0 20px rgba(255, 255, 255, 0.6); }
+        .footer-marquee {
+            background: black;
+            color: yellow;
+            padding: 5px 0;
+            font-weight: bold;
         }
         .footer {
             background: rgba(0, 0, 0, 0.8);
@@ -89,28 +74,6 @@
         <div id="home" class="content">Trang chủ - Nội dung sẽ hiện ra khi nhấn</div>
         <div id="docs" class="content">
             <h2>Danh mục</h2>
-            <div class="document-grid">
-                <div class="doc-category">📖 ĐÁNH GIÁ NĂNG LỰC - TƯ DUY</div>
-                <div class="doc-category">🎓 TỐT NGHIỆP THPT</div>
-                <div class="doc-category">⭐ TUYỂN SINH VÀO LỚP 10</div>
-                <div class="doc-category">📂 TOÁN</div>
-                <div class="doc-category">📂 VẬT LÝ</div>
-                <div class="doc-category">📂 HÓA HỌC</div>
-                <div class="doc-category">📂 TIẾNG ANH</div>
-                <div class="doc-category">📂 NGỮ VĂN - TIẾNG VIỆT</div>
-                <div class="doc-category">📂 SINH HỌC</div>
-                <div class="doc-category">📂 KHOA HỌC TỰ NHIÊN</div>
-                <div class="doc-category">📂 LỊCH SỬ - ĐỊA LÝ</div>
-                <div class="doc-category">📂 GDCD - ĐẠO ĐỨC</div>
-                <div class="doc-category">📂 TIN HỌC</div>
-                <div class="doc-category">📂 CÔNG NGHỆ</div>
-                <div class="doc-category">📂 HOẠT ĐỘNG TRẢI NGHIỆM</div>
-                <div class="doc-category">📂 GIÁO DỤC THỂ CHẤT</div>
-                <div class="doc-category">📂 ÂM NHẠC</div>
-                <div class="doc-category">📂 MỸ THUẬT</div>
-                <div class="doc-category">📂 QUỐC PHÒNG VÀ AN NINH</div>
-                <div class="doc-category">📂 GIÁO DỤC ĐỊA PHƯƠNG</div>
-            </div>
         </div>
         <div id="guide" class="content">Hướng dẫn sử dụng...</div>
         <div id="payment" class="content">
@@ -122,6 +85,8 @@
         <div id="contact" class="content">Email: giaoducvietnam29@gmail.com</div>
     </div>
 
+    <marquee class="footer-marquee">TÀI LIỆU ÔN THI UY TÍN HÀNG ĐẦU VIỆT NAM - LIÊN HỆ THẦY CÔ TƯ VẤN TRƯỚC KHI MUA SỬ DỤNG</marquee>
+    
     <footer class="footer">
         <p>&copy; 2025 TÀI LIỆU GIÁO DỤC VIỆT NAM. All rights reserved.</p>
     </footer>
@@ -134,4 +99,5 @@
     </script>
 </body>
 </html>
+
 

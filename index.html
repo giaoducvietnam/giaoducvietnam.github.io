@@ -69,7 +69,20 @@
     </style>
 </head>
 <body>
-    <audio id="background-music" autoplay loop>
+    <button onclick="toggleMusic()">Bật/Tắt Nhạc</button>
+
+<script>
+    var audio = document.getElementById("background-music");
+    
+    function toggleMusic() {
+        if (audio.paused) {
+            audio.play();
+        } else {
+            audio.pause();
+        }
+    }
+</script>
+<audio id="background-music" autoplay loop>
         <source src="fairy_tail_remix.mp3" type="audio/mpeg">
     </audio>
     

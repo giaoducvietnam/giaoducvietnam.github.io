@@ -3,131 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ngân Hàng Tài Liệu Ôn Thi</title>
+    <title>Tài liệu ôn thi môn Xã Hội</title>
     <link rel="stylesheet" href="style.css">
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
+            background: linear-gradient(to bottom, #ffecb3, #ffcc80);
+            font-family: Arial, sans-serif;
             text-align: center;
-            overflow-x: hidden;
+            overflow: hidden;
         }
         header {
-            background: #2C3E50;
-            padding: 15px 0;
-            text-align: center;
-            width: 100%;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        nav ul li {
-            margin: 10px;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        nav ul li a:hover {
-            color: #f39c12;
-        }
-        .hero {
-            background: linear-gradient(135deg, #2980b9, #6dd5fa);
-            color: white;
-            padding: 50px 20px;
-            font-size: 20px;
-            width: 100%;
-            box-sizing: border-box;
-        }
-        .container {
-            max-width: 90%;
-            width: 800px;
-            margin: auto;
-            background: white;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .file-list {
-            list-style: none;
-            padding: 0;
-        }
-        .file-list li {
-            margin: 10px 0;
-        }
-        .file-list a {
-            text-decoration: none;
-            color: #007bff;
-            font-weight: bold;
-            transition: color 0.3s, transform 0.3s;
-        }
-        .file-list a:hover {
-            color: #0056b3;
-            transform: scale(1.05);
-        }
-        footer {
-            background: #2C3E50;
+            background-color: rgba(255, 152, 0, 0.8);
             color: white;
-            text-align: center;
-            padding: 15px 0;
-            margin-top: 30px;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+        .sun {
+            position: absolute;
+            top: 10%;
+            left: 80%;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, yellow, orange);
+            border-radius: 50%;
+            animation: rotateSun 10s linear infinite;
+        }
+        @keyframes rotateSun {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .wave {
+            position: absolute;
+            bottom: 0;
             width: 100%;
-            box-sizing: border-box;
+            height: 100px;
+            background: url('https://i.imgur.com/QsN4gJ3.png') repeat-x;
+            animation: waveAnimation 5s infinite linear;
         }
-        footer a {
-            color: #f39c12;
-            text-decoration: none;
+        @keyframes waveAnimation {
+            0% { background-position: 0; }
+            100% { background-position: 1000px; }
         }
-        @keyframes backgroundAnimation {
-            0% { background-position: 0 0; }
-            100% { background-position: 100% 100%; }
+        .birds {
+            position: absolute;
+            top: 5%;
+            left: -10%;
+            width: 100px;
+            height: 50px;
+            background: url('https://i.imgur.com/CJpKefL.png') no-repeat;
+            background-size: contain;
+            animation: flyBirds 15s linear infinite;
         }
-        body {
-            background: linear-gradient(45deg, #ff9a9e, #fad0c4, #ffdde1);
-            background-size: 400% 400%;
-            animation: backgroundAnimation 15s linear infinite;
+        @keyframes flyBirds {
+            0% { left: -10%; }
+            100% { left: 110%; }
+        }
+        .leaves {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: url('https://i.imgur.com/Qs1YQfL.png') no-repeat;
+            background-size: contain;
+            animation: fallLeaves 5s infinite linear;
+        }
+        @keyframes fallLeaves {
+            0% { transform: translateY(-100px) rotate(0deg); }
+            100% { transform: translateY(500px) rotate(360deg); }
         }
     </style>
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">🏠 Trang chủ</a></li>
-                <li><a href="tailieu1.md">📚 Tài liệu</a></li>
-                <li><a href="huongdan.html">📝 Hướng dẫn</a></li>
-                <li><a href="chatgpt.html">🌍 VIAN AI</a></li>
-                <li><a href="thanhtoan.html">💳 Thanh toán</a></li>
-                <li><a href="lienhe.html">📞 Liên hệ</a></li>
-            </ul>
-        </nav>
+        <h1>Tài liệu ôn thi môn Xã Hội</h1>
     </header>
-
-    <section class="hero">
-        <h1>Chào mừng đến với Ngân Hàng Tài Liệu Ôn Thi</h1>
-        <p>Nơi cung cấp tài liệu học tập đầy đủ và chất lượng.</p>
-    </section>
-
-    <div class="container">
-        <h2>📚 Danh sách tài liệu</h2>
-        <ul class="file-list">
-            <li><a href="tunhien.html">📗 Tài liệu ôn thi môn Tự Nhiên</a></li>
-            <li><a href="huongdan.html">📕 Tài liệu hướng dẫn</a></li>
-        </ul>
-    </div>
-
+    <div class="sun"></div>
+    <div class="birds"></div>
+    <div class="leaves" style="top: 20%; left: 30%;"></div>
+    <div class="leaves" style="top: 10%; left: 60%;"></div>
+    <main>
+        <section>
+            <h2>Danh sách tài liệu</h2>
+            <ul>
+                <li><a href="#">Tài liệu 1 (Cập nhật sau)</a></li>
+                <li><a href="#">Tài liệu 2 (Cập nhật sau)</a></li>
+                <li><a href="#">Tài liệu 3 (Cập nhật sau)</a></li>
+                <li><a href="#">Tài liệu 4 (Cập nhật sau)</a></li>
+            </ul>
+        </section>
+    </main>
+    <div class="wave"></div>
     <footer>
-        <p>© 2025 TÀI LIỆU GIÁO DỤC VIỆT NAM. All Rights Reserved.</p>
-        <p>📩 Liên hệ: <a href="mailto:giaoducvietnam29@gmail.com">giaoducvietnam29@gmail.com</a></p>
+        <p>&copy; 2025 TÀI LIỆU GIÁO DỤC VIỆT NAM</p>
     </footer>
 </body>
 </html>

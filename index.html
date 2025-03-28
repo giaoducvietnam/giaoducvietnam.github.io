@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngân Hàng Tài Liệu Ôn Thi</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function goToChatGPT() {
+            window.location.href = "https://chat.openai.com/";
+        }
+        function showContact() {
+            alert("Mail: giaoducvietnam29@gmail.com");
+        }
+        function resetAll() {
+            window.location.href = "index.html";
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Chào mừng đến với Ngân Hàng Tài Liệu Ôn Thi</h1>
+    </header>
+    <nav class="menu">
+        <ul>
+            <li onclick="resetAll()">Trang chủ</li>
+            <li>Tài liệu</li>
+            <li>Hướng dẫn</li>
+            <li onclick="goToChatGPT()">VIANN AI</li>
+            <li>Thanh toán</li>
+            <li onclick="showContact()">Liên hệ</li>
+        </ul>
+    </nav>
+    <main>
+        <section class="content">
+            <h2>Danh mục tài liệu</h2>
+            <ul>
+                <li>Đánh giá năng lực 2025</li>
+                <li>Tốt nghiệp THPT 2025</li>
+                <li>Chuyên đề - Bài tập sách mới 2025</li>
+                <li>Giáo án - PPT sách mới 2025</li>
+                <li>Bộ đề kiểm tra sách mới 2025</li>
+            </ul>
+        </section>
+        <section class="payment">
+            <h2>Thanh toán</h2>
+            <p>Ngân hàng: MB BANK</p>
+            <p>STK: 068686868686868</p>
+            <p>Chủ tài khoản: VI VAN AN</p>
+            <p>Ghi nội dung chuyển khoản: SDT + MÔN</p>
+        </section>
+    </main>
+</body>
+</html>

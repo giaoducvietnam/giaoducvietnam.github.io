@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngân Hàng Tài Liệu Ôn Thi</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #f4f4f4; }
+        h1 {
+            font-size: 2em;
+            font-weight: bold;
+            animation: fadeIn 2s ease-in-out infinite alternate;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0.5; transform: scale(0.95); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        .menu { display: flex; justify-content: center; gap: 15px; background: #007bff; padding: 10px; border-radius: 10px; }
+        .menu a { color: white; text-decoration: none; padding: 10px 15px; border-radius: 5px; transition: background 0.3s ease-in-out; }
+        .menu a:hover { background: #0056b3; }
+        .content { display: none; padding: 20px; background: white; margin: 10px auto; width: 80%; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0,0,0,0.1); }
+        .active { display: block; }
+    </style>
+    <script>
+        function toggleContent(id) {
+            document.querySelectorAll('.content').forEach(div => div.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
+</head>
+<body>
+    <h1>Chào mừng đến với Ngân Hàng Tài Liệu Ôn Thi</h1>
+    <div class="menu">
+        <a href="#" onclick="toggleContent('home')">Trang chủ</a>
+        <a href="#" onclick="toggleContent('documents')">Tài liệu</a>
+        <a href="#" onclick="toggleContent('guide')">Hướng dẫn</a>
+        <a href="https://chat.openai.com" target="_blank">VIANN AI</a>
+        <a href="#" onclick="toggleContent('payment')">Thanh toán</a>
+        <a href="#" onclick="alert('Liên hệ: giaoducvietnam29@gmail.com')">Liên hệ</a>
+    </div>
+    <div id="home" class="content active"></div>
+    <div id="documents" class="content">
+        <h2>Danh mục tài liệu</h2>
+        <ul>
+            <li>Đánh giá năng lực 2025</li>
+            <li>Tốt nghiệp THPT 2025</li>
+            <li>Chuyên đề - Bài tập sách mới 2025</li>
+            <li>Giáo án - PPT sách mới 2025</li>
+            <li>Bộ đề kiểm tra sách mới 2025</li>
+        </ul>
+    </div>
+    <div id="payment" class="content">
+        <h2>Thanh toán</h2>
+        <p>Ngân hàng: MB BANK</p>
+        <p>STK: 06868686868868</p>
+        <p>Chủ tài khoản: VI VAN AN</p>
+        <p>Nội dung chuyển khoản: SĐT + MÔN</p>
+    </div>
+</body>
+</html>

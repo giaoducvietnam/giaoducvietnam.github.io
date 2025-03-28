@@ -69,36 +69,9 @@
     </style>
 </head>
 <body>
-    <button onclick="toggleMusic()">Bật/Tắt Nhạc</button>
-
-<script>
-    var audio = document.getElementById("background-music");
-    
-    function toggleMusic() {
-        if (audio.paused) {
-            audio.play();
-        } else {
-            audio.pause();
-        }
-    }
-</script>
-<audio id="background-music" autoplay loop>
-        <source src="fairy_tail_remix.mp3" type="audio/mpeg">
-    <button onclick="toggleMusic()" style="position: fixed; bottom: 70px; right: 20px; padding: 10px; background: #FFD700; border: none; border-radius: 5px; cursor: pointer;">
-    🎵 Bật/Tắt Nhạc
-</button>
-
-<script>
-    var audio = document.getElementById("background-music");
-    function toggleMusic() {
-        if (audio.paused) {
-            audio.play();
-        } else {
-            audio.pause();
-        }
-    }
-</script>
-</audio>
+    <audio id="background-music" autoplay loop>
+        <source src="bac_bling.mp3" type="audio/mpeg">
+    </audio>
     
     <nav class="navbar">
         <h1>Ngân Hàng Tài Liệu Ôn Thi</h1>
@@ -161,3 +134,4 @@
     </script>
 </body>
 </html>
+

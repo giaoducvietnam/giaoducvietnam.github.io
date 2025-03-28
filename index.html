@@ -4,64 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ngân Hàng Tài Liệu Ôn Thi</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background: linear-gradient(to right, #1e3c72, #2a5298);
-            color: white;
-            margin: 0;
-            padding: 0;
-        }
-        h1 {
-            font-size: 2em;
-            animation: fadeIn 2s ease-in-out, bounce 1.5s infinite alternate;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes bounce {
-            from { transform: translateY(0); }
-            to { transform: translateY(5px); }
-        }
-        .menu-container {
-            overflow-x: auto;
-            white-space: nowrap;
-            background: white;
-            padding: 10px 0;
-        }
-        .menu {
-            display: inline-flex;
-            gap: 15px;
-            padding: 10px;
-        }
-        .menu a {
-            text-decoration: none;
-            color: black;
-            font-weight: bold;
-            padding: 10px;
-            background: #f0f0f0;
-            border-radius: 5px;
-            transition: background 0.3s, transform 0.2s;
-        }
-        .menu a:hover {
-            background: #dcdcdc;
-            transform: scale(1.1);
-        }
-        .content {
-            display: none;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.9);
-            color: black;
-            margin: 10px;
-            border-radius: 8px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Chào mừng đến với Ngân Hàng Tài Liệu Ôn Thi</h1>
-    <div class="menu-container">
+    <nav class="navbar">
+        <h1>Ngân Hàng Tài Liệu Ôn Thi</h1>
         <div class="menu">
             <a href="#" onclick="toggleContent('home')">Trang chủ</a>
             <a href="#" onclick="toggleContent('docs')">Tài liệu</a>
@@ -70,17 +17,49 @@
             <a href="#" onclick="toggleContent('payment')">Thanh toán</a>
             <a href="#" onclick="toggleContent('contact')">Liên hệ</a>
         </div>
+    </nav>
+
+    <div class="container">
+        <div id="home" class="content">Trang chủ - Nội dung sẽ hiện ra khi nhấn</div>
+        <div id="docs" class="content">
+            <h2>Danh mục</h2>
+            <div class="document-grid">
+                <div class="doc-category">📖 ĐÁNH GIÁ NĂNG LỰC - TƯ DUY</div>
+                <div class="doc-category">🎓 TỐT NGHIỆP THPT</div>
+                <div class="doc-category">⭐ TUYỂN SINH VÀO LỚP 10</div>
+                <div class="doc-category">📂 TOÁN</div>
+                <div class="doc-category">📂 VẬT LÝ</div>
+                <div class="doc-category">📂 HÓA HỌC</div>
+                <div class="doc-category">📂 TIẾNG ANH</div>
+                <div class="doc-category">📂 NGỮ VĂN - TIẾNG VIỆT</div>
+                <div class="doc-category">📂 SINH HỌC</div>
+                <div class="doc-category">📂 KHOA HỌC TỰ NHIÊN</div>
+                <div class="doc-category">📂 LỊCH SỬ - ĐỊA LÝ</div>
+                <div class="doc-category">📂 GDCD - ĐẠO ĐỨC</div>
+                <div class="doc-category">📂 TIN HỌC</div>
+                <div class="doc-category">📂 CÔNG NGHỆ</div>
+                <div class="doc-category">📂 HOẠT ĐỘNG TRẢI NGHIỆM</div>
+                <div class="doc-category">📂 GIÁO DỤC THỂ CHẤT</div>
+                <div class="doc-category">📂 ÂM NHẠC</div>
+                <div class="doc-category">📂 MỸ THUẬT</div>
+                <div class="doc-category">📂 QUỐC PHÒNG VÀ AN NINH</div>
+                <div class="doc-category">📂 GIÁO DỤC ĐỊA PHƯƠNG</div>
+            </div>
+        </div>
+        <div id="guide" class="content">Hướng dẫn sử dụng...</div>
+        <div id="payment" class="content">
+            <p>Ngân hàng: MB BANK</p>
+            <p>STK: 06868686868868</p>
+            <p>Chủ tài khoản: VI VAN AN</p>
+            <p>Nội dung chuyển khoản: SĐT + MÔN</p>
+        </div>
+        <div id="contact" class="content">Email: giaoducvietnam29@gmail.com</div>
     </div>
-    <div id="home" class="content">Trang chủ - Nội dung sẽ hiện ra khi nhấn</div>
-    <div id="docs" class="content">Danh mục tài liệu...</div>
-    <div id="guide" class="content">Hướng dẫn sử dụng...</div>
-    <div id="payment" class="content">
-        <p>Ngân hàng: MB BANK</p>
-        <p>STK: 06868686868868</p>
-        <p>Chủ tài khoản: VI VAN AN</p>
-        <p>Nội dung chuyển khoản: SĐT + MÔN</p>
-    </div>
-    <div id="contact" class="content">Email: giaoducvietnam29@gmail.com</div>
+
+    <footer class="footer">
+        <p>&copy; 2025 TÀI LIỆU GIÁO DỤC VIỆT NAM. All rights reserved.</p>
+    </footer>
+
     <script>
         function toggleContent(id) {
             document.querySelectorAll('.content').forEach(el => el.style.display = 'none');
@@ -89,3 +68,4 @@
     </script>
 </body>
 </html>
+

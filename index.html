@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngân Hàng Tài Liệu Ôn Thi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background: #007bff;
+            color: white;
+            padding: 15px;
+            font-size: 24px;
+            font-weight: bold;
+            animation: glow 1.5s infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #fff; }
+            to { text-shadow: 0 0 20px #ff0; }
+        }
+        .menu {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px;
+            background: #0056b3;
+        }
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px;
+        }
+        .menu a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+        }
+        .content {
+            padding: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+        .toggle-btn {
+            background: #ffc107;
+            color: black;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .timer {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Chào mừng đến với Ngân Hàng Tài Liệu Ôn Thi</div>
+    <div class="menu">
+        <a href="#">Trang chủ</a>
+        <a href="#">Tài liệu</a>
+        <a href="#">Hướng dẫn</a>
+        <a href="#" onclick="window.open('https://chat.openai.com/', '_blank')">VIANN AI</a>
+        <a href="#" onclick="toggleSection('payment')">Thanh toán</a>
+        <a href="#" onclick="toggleSection('contact')">Liên hệ</a>
+    </div>
+    <div class="content">
+        <div id="payment" class="hidden">
+            <h2>Thanh toán</h2>
+            <p>Ngân hàng: MB BANK</p>
+            <p>STK: 06868686868868</p>
+            <p>Chủ tài khoản: VI VAN AN</p>
+            <p>Ghi nội dung chuyển khoản: SĐT + MÔN</p>
+            <div class="timer" id="countdown">10:00</div>
+        </div>
+        <div id="contact" class="hidden">
+            <h2>Liên hệ</h2>
+            <p>Email: <a href="mailto:giaoducvietnam29@gmail.com">giaoducvietnam29@gmail.com</a></p>
+        </div>
+    </div>
+    <script>
+        function toggleSection(id) {
+            var section = document.getElementById(id);
+            section.classList.toggle("hidden");
+        }
+        function startCountdown() {
+            var time = 600;
+            var display = document.getElementById('countdown');
+            var timer = setInterval(function () {
+                var minutes = Math.floor(time / 60);
+                var seconds = time % 60;
+                display.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+                time--;
+                if (time < 0) clearInterval(timer);
+            }, 1000);
+        }
+        startCountdown();
+    </script>
+</body>
+</html>

@@ -71,35 +71,20 @@
             from { transform: translateY(-50px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
-        .chat-box {
-            width: 90%;
-            max-width: 500px;
-            background: white;
-            color: black;
-            border-radius: 10px;
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
             padding: 10px;
-            margin: 20px auto;
-            text-align: left;
-        }
-        .chat-messages {
-            height: 300px;
-            overflow-y: auto;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 10px;
-        }
-        .chat-input {
-            width: 80%;
-            padding: 8px;
+            background: rgba(255, 255, 255, 0.8);
+            margin: 5px 0;
             border-radius: 5px;
-            border: 1px solid #ccc;
+            transition: transform 0.3s, background 0.3s;
         }
-        .send-btn {
-            padding: 8px 15px;
-            border: none;
-            background: #2a5298;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
+        li:hover {
+            background: #FFD700;
+            transform: scale(1.05);
         }
     </style>
     <script>
@@ -109,21 +94,6 @@
             section.style.display = 'block';
             section.style.transform = 'scale(1)';
         }
-        function sendMessage() {
-            let input = document.getElementById("chat-input");
-            let message = input.value.trim();
-            if (message !== "") {
-                let chatMessages = document.getElementById("chat-messages");
-                let newMessage = document.createElement("div");
-                newMessage.textContent = "Bạn: " + message;
-                chatMessages.appendChild(newMessage);
-                input.value = "";
-                localStorage.setItem("chatHistory", chatMessages.innerHTML);
-            }
-        }
-        window.onload = function() {
-            document.getElementById("chat-messages").innerHTML = localStorage.getItem("chatHistory") || "";
-        }
     </script>
 </head>
 <body>
@@ -132,24 +102,55 @@
         <div class="menu">
             <a href="#" onclick="showSection('danh-muc')">Tài liệu</a>
             <a href="#" onclick="showSection('thanh-toan')">Thanh toán</a>
-            <a href="#" onclick="showSection('chat')">Chat</a>
             <a href="#" onclick="showSection('lien-he')">Liên hệ</a>
+            <a href="https://chat.openai.com" target="_blank">VIANN AI</a>
         </div>
     </nav>
 
-    <div class="container" id="chat">
-        <h2>Chat với giáo viên</h2>
-        <div class="chat-box">
-            <div class="chat-messages" id="chat-messages"></div>
-            <input type="text" id="chat-input" class="chat-input" placeholder="Nhập tin nhắn...">
-            <button class="send-btn" onclick="sendMessage()">Gửi</button>
-        </div>
+    <div class="container" id="danh-muc">
+        <h2>Danh mục</h2>
+        <ul>
+            <li>📚 ĐÁNH GIÁ NĂNG LỰC - TƯ DUY</li>
+            <li>🎓 TỐT NGHIỆP THPT</li>
+            <li>⭐ TUYỂN SINH VÀO LỚP 10</li>
+            <li>📂 TOÁN</li>
+            <li>📂 VẬT LÝ</li>
+            <li>📂 HÓA HỌC</li>
+            <li>📂 TIẾNG ANH</li>
+            <li>📂 NGỮ VĂN - TIẾNG VIỆT</li>
+            <li>📂 SINH HỌC</li>
+            <li>📂 KHOA HỌC TỰ NHIÊN</li>
+            <li>📂 LỊCH SỬ - ĐỊA LÝ</li>
+            <li>📂 GDCD - ĐẠO ĐỨC</li>
+            <li>📂 TIN HỌC</li>
+            <li>📂 CÔNG NGHỆ</li>
+            <li>📂 HOẠT ĐỘNG TRẢI NGHIỆM</li>
+            <li>📂 GIÁO DỤC THỂ CHẤT</li>
+            <li>📂 ÂM NHẠC</li>
+            <li>📂 MỸ THUẬT</li>
+            <li>📂 QUỐC PHÒNG VÀ AN NINH</li>
+            <li>📂 GIÁO DỤC ĐỊA PHƯƠNG</li>
+        </ul>
+    </div>
+    
+    <div class="content-section" id="thanh-toan">
+        <h2>Thanh Toán</h2>
+        <p>NGÂN HÀNG : MB BANK<br>
+        STK: 06868686868868<br>
+        CTK: VI VAN AN<br>
+        ND: SĐT + MÔN</p>
     </div>
 
+    <div class="content-section" id="lien-he">
+        <h2>Liên Hệ</h2>
+        <p>Email: <a href="mailto:giaoducvietnam29@gmail.com">giaoducvietnam29@gmail.com</a></p>
+    </div>
+    
     <footer class="footer">
         <p>&copy; 2025 TÀI LIỆU GIÁO DỤC VIỆT NAM.</p>
     </footer>
 </body>
 </html>
+
 
 

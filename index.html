@@ -104,23 +104,40 @@
         }
     </style>
     <script>
+        let chatHistory = [];
+        
         function toggleChat() {
             var chatBox = document.getElementById("chat-box");
             chatBox.style.display = (chatBox.style.display === "none" || chatBox.style.display === "") ? "block" : "none";
+            loadChatHistory();
         }
+        
         function sendMessage() {
             var input = document.getElementById("chat-input");
             var message = input.value;
             if (message.trim() !== "") {
-                var chatMessages = document.getElementById("chat-messages");
-                var newMessage = document.createElement("div");
-                newMessage.innerHTML = `<p><strong>Bạn:</strong> ${message}</p><p class='chat-status'>Đã gửi</p>`;
-                chatMessages.appendChild(newMessage);
+                chatHistory.push({ sender: "Bạn", text: message, status: "Đã gửi" });
+                updateChat();
                 input.value = "";
                 setTimeout(() => {
-                    newMessage.querySelector('.chat-status').innerText = "Đã xem";
+                    chatHistory[chatHistory.length - 1].status = "Đã xem";
+                    updateChat();
                 }, 2000);
             }
+        }
+        
+        function updateChat() {
+            var chatMessages = document.getElementById("chat-messages");
+            chatMessages.innerHTML = "";
+            chatHistory.forEach(msg => {
+                var newMessage = document.createElement("div");
+                newMessage.innerHTML = `<p><strong>${msg.sender}:</strong> ${msg.text}</p><p class='chat-status'>${msg.status}</p>`;
+                chatMessages.appendChild(newMessage);
+            });
+        }
+        
+        function loadChatHistory() {
+            updateChat();
         }
     </script>
 </head>
@@ -132,7 +149,6 @@
             <a href="#">Thanh toán</a>
             <a href="#">Liên hệ</a>
             <a href="#" onclick="toggleChat()">Chat với giáo viên</a>
-            <a href="#" onclick="toggleAIChat()">Chat với AI</a>
         </div>
     </nav>
     
@@ -151,6 +167,7 @@
     </footer>
 </body>
 </html>
+
 
 
 

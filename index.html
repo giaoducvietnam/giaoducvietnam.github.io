@@ -104,7 +104,7 @@
         }
     </style>
     <script>
-        let chatHistory = [];
+        let chatHistory = JSON.parse(localStorage.getItem("chatHistory")) || [];
         
         function toggleChat() {
             var chatBox = document.getElementById("chat-box");
@@ -119,10 +119,25 @@
                 chatHistory.push({ sender: "Bạn", text: message, status: "Đã gửi" });
                 updateChat();
                 input.value = "";
+                localStorage.setItem("chatHistory", JSON.stringify(chatHistory));
                 setTimeout(() => {
                     chatHistory[chatHistory.length - 1].status = "Đã xem";
                     updateChat();
+                    localStorage.setItem("chatHistory", JSON.stringify(chatHistory));
                 }, 2000);
+            }
+        }
+        
+        function sendImage(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    chatHistory.push({ sender: "Bạn", image: e.target.result, status: "Đã gửi" });
+                    updateChat();
+                    localStorage.setItem("chatHistory", JSON.stringify(chatHistory));
+                };
+                reader.readAsDataURL(file);
             }
         }
         
@@ -131,7 +146,11 @@
             chatMessages.innerHTML = "";
             chatHistory.forEach(msg => {
                 var newMessage = document.createElement("div");
-                newMessage.innerHTML = `<p><strong>${msg.sender}:</strong> ${msg.text}</p><p class='chat-status'>${msg.status}</p>`;
+                if (msg.text) {
+                    newMessage.innerHTML = `<p><strong>${msg.sender}:</strong> ${msg.text}</p><p class='chat-status'>${msg.status}</p>`;
+                } else if (msg.image) {
+                    newMessage.innerHTML = `<p><strong>${msg.sender}:</strong></p><img src="${msg.image}" width="200"><p class='chat-status'>${msg.status}</p>`;
+                }
                 chatMessages.appendChild(newMessage);
             });
         }
@@ -158,6 +177,7 @@
         <div class="chat-messages" id="chat-messages"></div>
         <div class="chat-input">
             <input type="text" id="chat-input" placeholder="Nhập tin nhắn..." onkeypress="if(event.key==='Enter') sendMessage()">
+            <input type="file" accept="image/*" onchange="sendImage(event)">
             <button onclick="sendMessage()">Gửi</button>
         </div>
     </div>
@@ -167,6 +187,7 @@
     </footer>
 </body>
 </html>
+
 
 
 

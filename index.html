@@ -1,197 +1,33 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ngân Hàng Tài Liệu Ôn Thi</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        body {<!-- Navigation Bar -->
-<nav style="background:#0073e6; padding:10px;">
-  <a href="index.html" style="color:white; margin-right:15px; text-decoration:none;">Trang chủ</a>
-  <a href="tailieu.html" style="color:white; margin-right:15px; text-decoration:none;">Tài liệu</a>
-  <a href="lienhe.html" style="color:white; text-decoration:none;">Liên hệ</a>
-</nav>
-            background: linear-gradient(to right, #1e3c72, #2a5298);
-            color: white;
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-            animation: fadeIn 1s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .navbar {
-            background: rgba(0, 0, 0, 0.9);
-            padding: 15px;
-            text-align: center;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
-        .menu a {
-            color: white;
-            padding: 10px;
-            text-decoration: none;
-            transition: color 0.3s, transform 0.3s;
-            cursor: pointer;
-            font-weight: bold;
-            display: inline-block;
-        }
-        .menu a:hover {
-            color: #FFD700;
-            transform: scale(1.1);
-        }
-        .chat-bubble {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #FFD700;
-            color: black;
-            padding: 15px;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-        }
-        .chat-box {
-            display: none;
-            position: fixed;
-            bottom: 70px;
-            right: 20px;
-            width: 300px;
-            height: 400px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-        .chat-header {
-            background: #FFD700;
-            padding: 10px;
-            text-align: center;
-            font-weight: bold;
-        }
-        .chat-messages {
-            flex: 1;
-            overflow-y: auto;
-            padding: 10px;
-        }
-        .chat-input {
-            display: flex;
-            padding: 10px;
-            border-top: 1px solid #ccc;
-        }
-        .chat-input input {
-            flex: 1;
-            border: none;
-            padding: 10px;
-            box-sizing: border-box;
-        }
-        .chat-input button {
-            background: #FFD700;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-        }
-        .chat-status {
-            font-size: 12px;
-            color: gray;
-            text-align: right;
-            margin-right: 10px;
-        }
-    </style>
-    <script>
-        let chatHistory = JSON.parse(localStorage.getItem("chatHistory")) || [];
-        
-        function toggleChat() {
-            var chatBox = document.getElementById("chat-box");
-            chatBox.style.display = (chatBox.style.display === "none" || chatBox.style.display === "") ? "block" : "none";
-            loadChatHistory();
-        }
-        
-        function sendMessage() {
-            var input = document.getElementById("chat-input");
-            var message = input.value;
-            if (message.trim() !== "") {
-                chatHistory.push({ sender: "Bạn", text: message, status: "Đã gửi" });
-                updateChat();
-                input.value = "";
-                localStorage.setItem("chatHistory", JSON.stringify(chatHistory));
-                setTimeout(() => {
-                    chatHistory[chatHistory.length - 1].status = "Đã xem";
-                    updateChat();
-                    localStorage.setItem("chatHistory", JSON.stringify(chatHistory));
-                }, 2000);
-            }
-        }
-        
-        function sendImage(event) {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    chatHistory.push({ sender: "Bạn", image: e.target.result, status: "Đã gửi" });
-                    updateChat();
-                    localStorage.setItem("chatHistory", JSON.stringify(chatHistory));
-                };
-                reader.readAsDataURL(file);
-            }
-        }
-        
-        function updateChat() {
-            var chatMessages = document.getElementById("chat-messages");
-            chatMessages.innerHTML = "";
-            chatHistory.forEach(msg => {
-                var newMessage = document.createElement("div");
-                if (msg.text) {
-                    newMessage.innerHTML = `<p><strong>${msg.sender}:</strong> ${msg.text}</p><p class='chat-status'>${msg.status}</p>`;
-                } else if (msg.image) {
-                    newMessage.innerHTML = `<p><strong>${msg.sender}:</strong></p><img src="${msg.image}" width="200"><p class='chat-status'>${msg.status}</p>`;
-                }
-                chatMessages.appendChild(newMessage);
-            });
-        }
-        
-        function loadChatHistory() {
-            updateChat();
-        }
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TÀI LIỆU GIÁO DỤC VIỆT NAM</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar">
-        <h1>Ngân Hàng Tài Liệu Ôn Thi</h1>
-        <div class="menu">
-            <a href="#">Tài liệu</a>
-            <a href="#">Thanh toán</a>
-            <a href="#">Liên hệ</a>
-            <a href="#" onclick="toggleChat()">Chat với giáo viên</a>
-        </div>
-    </nav>
-    
-    <div class="chat-bubble" onclick="toggleChat()">💬 Chat</div>
-    <div class="chat-box" id="chat-box">
-        <div class="chat-header">Chat với giáo viên</div>
-        <div class="chat-messages" id="chat-messages"></div>
-        <div class="chat-input">
-            <input type="text" id="chat-input" placeholder="Nhập tin nhắn..." onkeypress="if(event.key==='Enter') sendMessage()">
-            <input type="file" accept="image/*" onchange="sendImage(event)">
-            <button onclick="sendMessage()">Gửi</button>
-        </div>
-    </div>
-    
-    <footer class="footer">
-        <p>&copy; 2025 TÀI LIỆU GIÁO DỤC VIỆT NAM.</p>
-    </footer><!-- Footer -->
-<footer style="background:#333; color:white; text-align:center; padding:15px; margin-top:20px;">
-  © 2025 TÀI LIỆU GIÁO DỤC VIỆT NAM - All rights reserved.
-</footer>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html">Trang chủ</a>
+    <a href="tailieu.html">Tài liệu</a>
+    <a href="lienhe.html">Liên hệ</a>
+  </nav>
+
+  <!-- Nội dung chính -->
+  <header>
+    <h1>Chào mừng đến với TÀI LIỆU GIÁO DỤC VIỆT NAM</h1>
+    <p>Website chia sẻ tài liệu học tập và ôn thi miễn phí cho học sinh, sinh viên.</p>
+  </header>
+
+  <section>
+    <h2>Giới thiệu</h2>
+    <p>Tại đây, bạn có thể tìm thấy các tài liệu ôn tập, đề thi, và bài giảng từ nhiều nguồn chất lượng.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 TÀI LIỆU GIÁO DỤC VIỆT NAM - All rights reserved.
+  </footer>
 </body>
 </html>

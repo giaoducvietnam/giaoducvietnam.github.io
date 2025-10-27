@@ -118,3 +118,23 @@ nav a:hover {
   border-radius: 8px;
   cursor: pointer;
 }
+/* ❄️ Hiệu ứng tuyết rơi */
+.snowflake {
+  position: fixed;
+  top: -10px;
+  color: #fff;
+  pointer-events: none;
+  z-index: 9999;
+  animation-name: fall;
+  animation-timing-function: linear;
+}
+
+@keyframes fall {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+/* đảm bảo Messenger chat nổi lên trên */
+.fb_dialog.fb_dialog_advanced {
+  z-index: 9999 !important;
+}

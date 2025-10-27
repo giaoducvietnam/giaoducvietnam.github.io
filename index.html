@@ -82,5 +82,20 @@ setInterval(createSnowflake, 150);
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
 </script>
+<!-- 🎄 Tuyết rơi Giáng Sinh -->
+<script>
+function createSnowflake() {
+  const snowflake = document.createElement('div');
+  snowflake.classList.add('snowflake');
+  snowflake.textContent = '❄';
+  snowflake.style.left = Math.random() * window.innerWidth + 'px';
+  snowflake.style.animationDuration = 5 + Math.random() * 5 + 's';
+  snowflake.style.opacity = Math.random();
+  snowflake.style.fontSize = 12 + Math.random() * 24 + 'px';
+  document.body.appendChild(snowflake);
+  setTimeout(() => { snowflake.remove(); }, 10000);
+}
+setInterval(createSnowflake, 150);
+</script>
 </body>
 </html>

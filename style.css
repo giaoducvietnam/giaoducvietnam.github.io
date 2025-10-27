@@ -138,3 +138,39 @@ nav a:hover {
 .fb_dialog.fb_dialog_advanced {
   z-index: 9999 !important;
 }
+/* 🎄 Nền Giáng Sinh sặc sỡ */
+body {
+  background: linear-gradient(135deg, #ff4d4d, #ffcc00, #33cc33, #3399ff);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  position: relative; /* để tuyết rơi */
+  color: #fff; /* chữ nổi trên nền rực rỡ */
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ❄️ Tuyết rơi */
+.snowflake {
+  position: fixed;
+  top: -10px;
+  color: #fff;
+  pointer-events: none;
+  z-index: 9999;
+  animation-name: fall;
+  animation-timing-function: linear;
+  user-select: none;
+}
+
+@keyframes fall {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+/* Messenger chat nổi trên nền */
+.fb_dialog.fb_dialog_advanced {
+  z-index: 9999 !important;
+}

@@ -49,3 +49,72 @@ footer {
   font-size: 22px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
+/* === Nâng cấp màu sắc, hiệu ứng, và chat AI === */
+:root {
+  --primary: #007bff;
+  --accent: #00c6ff;
+  --text: #fff;
+  --bg: linear-gradient(135deg, #007bff, #00bcd4, #2196f3);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+header {
+  background: rgba(0,0,0,0.5);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+nav a {
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background: #ffd700;
+  color: #000;
+  border-radius: 8px;
+}
+
+/* Chat AI Box */
+.chat-container {
+  max-width: 600px;
+  margin: 40px auto;
+  background: rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+#chat-log {
+  height: 250px;
+  overflow-y: auto;
+  background: rgba(0,0,0,0.2);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+#user-input {
+  width: 80%;
+  border-radius: 8px;
+  padding: 10px;
+  border: none;
+  outline: none;
+}
+
+#send-btn {
+  padding: 10px 15px;
+  background: #ffd700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}

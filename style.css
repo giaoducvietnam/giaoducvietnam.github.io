@@ -1,48 +1,51 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
-  padding: 0;
-  line-height: 1.6;
-  background: #f9f9f9;
-}
-
-header {
-  background: #004aad;
+  background: linear-gradient(135deg, #1e90ff, #00bfff, #87cefa);
   color: #fff;
-  padding: 15px;
   text-align: center;
 }
 
-nav {
-  margin-top: 10px;
+header {
+  background: rgba(0,0,0,0.3);
+  padding: 15px;
 }
 
 nav a {
   color: #fff;
   text-decoration: none;
-  margin: 0 15px;
+  margin: 0 10px;
   font-weight: bold;
 }
 
-nav a.active {
-  border-bottom: 2px solid yellow;
+nav a:hover {
+  text-decoration: underline;
 }
 
-main {
+.intro {
+  margin: 80px auto;
+  max-width: 600px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
   padding: 20px;
 }
 
-section {
-  margin-bottom: 20px;
-  background: #fff;
-  padding: 15px;
-  border-radius: 5px;
+footer {
+  margin-top: 50px;
+  background: rgba(0,0,0,0.3);
+  padding: 10px;
 }
 
-footer {
-  text-align: center;
-  background: #333;
-  color: #fff;
-  padding: 10px;
-  margin-top: 20px;
+/* Nút chat chăm sóc khách hàng */
+#support-chat {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #fff;
+  color: #1e90ff;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 22px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }

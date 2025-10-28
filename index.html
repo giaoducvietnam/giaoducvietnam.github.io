@@ -216,5 +216,40 @@ setInterval(createSnowflake, 150);
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
 </script>
+<!-- nội dung cũ của web -->
+...
+<!-- Dán đoạn này ở đây -->
+<style>
+body.blur {filter: blur(10px);transition: all 0.3s ease;}
+.warning-popup {
+  position: fixed;top: 50%;left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255,0,0,0.9);color: white;
+  padding: 20px 40px;border-radius: 10px;
+  font-size: 18px;z-index: 999999;display: none;
+}
+</style>
+
+<script>
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'PrintScreen') {
+    alert('❌ Không được phép chụp màn hình tài liệu này!');
+    window.location.href = "https://google.com";
+  }
+  if (e.ctrlKey && (e.key === 'p' || e.key === 'u' || e.key === 's')) {
+    e.preventDefault();
+    alert('❌ Không được phép sao chép hoặc in nội dung!');
+  }
+});
+document.addEventListener('visibilitychange', function() {
+  if (document.hidden) {
+    document.body.classList.add('blur');
+  } else {
+    document.body.classList.remove('blur');
+  }
+});
+</script>
+</body>
+</html>
 </body>
 </html>

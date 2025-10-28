@@ -97,5 +97,63 @@ function createSnowflake() {
 }
 setInterval(createSnowflake, 150);
 </script>
+<!-- 🎄 Hiệu ứng Giáng Sinh + Cây thông Noel -->
+<div class="christmas-decoration">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Christmas_tree_icon.svg" alt="Cây thông Noel" class="tree">
+  <h2 class="christmas-text">🎅 Mừng Giáng Sinh An Lành 🎁</h2>
+</div>
+
+<!-- 💬 Nút chăm sóc khách hàng -->
+<div class="support-box">
+  <button onclick="window.open('https://www.facebook.com/an.vivan.378/', '_blank')">
+    💬 Liên hệ chăm sóc khách hàng
+  </button>
+</div>
+
+<!-- 💳 Khu vực Thanh Toán -->
+<footer class="payment-info">
+  <h3>💰 Thông tin thanh toán</h3>
+  <p>Ngân hàng: <b>MB Bank</b></p>
+  <p>Số tài khoản: <b>06868686868868</b></p>
+  <p>Chủ tài khoản: <b>VI VAN AN</b></p>
+</footer>
+
+<!-- ❄️ Hiệu ứng tuyết rơi -->
+<script>
+function createSnowflake() {
+  const snowflake = document.createElement('div');
+  snowflake.classList.add('snowflake');
+  snowflake.textContent = '❄';
+  snowflake.style.left = Math.random() * window.innerWidth + 'px';
+  snowflake.style.animationDuration = 5 + Math.random() * 5 + 's';
+  snowflake.style.opacity = Math.random();
+  snowflake.style.fontSize = 12 + Math.random() * 24 + 'px';
+  document.body.appendChild(snowflake);
+  setTimeout(() => { snowflake.remove(); }, 10000);
+}
+setInterval(createSnowflake, 150);
+</script>
+
+<!-- 🌟 Messenger Chat Plugin -->
+<div id="fb-root"></div>
+<div id="fb-customer-chat" class="fb-customerchat"></div>
+
+<script>
+  var chatbox = document.getElementById('fb-customer-chat');
+  chatbox.setAttribute("page_id", "100049268951394");  
+  chatbox.setAttribute("attribution", "biz_inbox");
+
+  window.fbAsyncInit = function() {
+    FB.init({xfbml: true, version: 'v20.0'});
+  };
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
 </body>
 </html>
